@@ -43,12 +43,51 @@ class Module_Daybooks extends ModuleApp
 		$data = array();
 
 		$db_data = array( 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
-		$db_table = 'fin_daybooks';
+		$db_table = 'fin_object_daybook';
 		$db_options = NULL;
 
 		$data = Core::Database()->Retrieve( $db_data, $db_table, $db_options );
 
 		return $data;
+	}
+
+	public function HandleBooksForm()
+	{
+		Core::Form()->SetMethod( 'post' );
+
+		Core::Form()->SetData( Core::Config()->Get( 'daybooks.form.daybook_add' ) );
+
+		$form['meta'] = Core::Form()->GetMeta();
+
+		$form['errors'] = array();
+
+		if ( !empty( $_POST ) )
+		{
+			$validation = Core::Form()->Validate();
+
+			if ( FALSE !== $validation )
+			{
+				$form['data'] = Core::Form()->GetFilteredData();
+
+				unset($form['data']['book_add']); //XXX HACK
+
+				Core::Database()->Create( $form['data'], 'fin_daybooks' );
+
+				Core::Router()->Redirect();
+			}
+			else
+			{
+				$form['data'] = Core::Form()->GetData();
+
+				$form['errors'] = Core::Form()->GetErrors();
+			}
+		}
+		else
+		{
+			$form['data'] = Core::Form()->GetData();
+		}
+
+		return $form;
 	}
 }
 ?>

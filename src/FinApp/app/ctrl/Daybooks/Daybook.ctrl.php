@@ -53,10 +53,15 @@ class Controller_Daybooks_Daybook extends ControllerApp
 		$data['page'] = 'daybooks';
 
 		/**
+		 * @var array
+		 */
+		$data['form'] = $this->Module()->HandleBooksForm();
+
+		/**
 		 * @var books
 		 */
 		$data['books'] = $this->Module()->GetBooks();
-
+		
 		echo $this->GetOutput( $data );
 
 		return TRUE;

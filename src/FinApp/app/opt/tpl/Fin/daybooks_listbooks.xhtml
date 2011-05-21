@@ -22,9 +22,52 @@
 		</tal:block>
 		
 		<tal:block metal:fill-slot="content-main">
-			<table>
+		
+			<h1 tal:content="title">Title</h1>
+			<br />
+			
+			<form class="book_add" enctype="multipart/form-data" method="post" action="">
+				<table>
+					<tr>
+						<th tal:repeat="form_meta form/meta">
+							${form_meta/title}
+						</th>
+					</tr>
+					<tr>
+						<td tal:repeat="form_meta form/meta">
+							<input tal:condition="php: form_meta['type'] EQ 'text'" tal:attributes="type form_meta/type" type="text" name="${repeat/form_meta/key}" value="" />
+							<select tal:condition="php: repeat.form_meta.key EQ 'book_account'" name="book_account">
+								<option value="bank">bank</option>
+								<option value="bank">cash</option>
+							</select>
+							<select tal:condition="php: repeat.form_meta.key EQ 'book_type'" name="book_type">
+								<option value="payment">payment</option>
+								<option value="income">income</option>
+							</select>
+							<input tal:condition="php: repeat.form_meta.key EQ 'book_add'" type="submit" name="book_add" value="Add" />
+						</td>
+					</tr>
+				</table>
+			</form>
+			
+			<br />
+			
+			<table class="books">
+				<tr>
+					<th>Date</th>
+					<th>Account</th>
+					<th>Type</th>
+					<th>Amount</th>
+					<th>Document</th>
+					<th>Notes</th>
+				</tr>
 				<tr tal:repeat="book books">
-					<td tal:content="book/book_amount">&#160;</td>
+					<td tal:content="book/book_date">&#160;</td>
+					<td tal:content="book/book_account">&#160;</td>
+					<td tal:content="book/book_type">&#160;</td>
+					<td tal:content="book/book_amount" class="align-right">&#160;</td>
+					<td tal:content="book/book_document">&#160;</td>
+					<td tal:content="book/book_notes">&#160;</td>
 				</tr>
 			</table>
 			

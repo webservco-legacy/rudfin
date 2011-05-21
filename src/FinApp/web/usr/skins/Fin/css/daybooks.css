@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
 /* *** DAYBOOKS *** */
+.book_add th {
+	background: #ddd;
+	border: 1px dashed #333;
+	padding: 10px;
+}
+
+.book_add td {
+	border: 1px dashed #333;
+	padding: 10px;
+}
+
+.book_add input[type="text"] {
+	width: 100px;
+}
+
+table.books th {
+	background: #ddd;
+	border: 1px dashed #333;
+	padding: 10px;
+}
+
+table.books td {
+	border: 1px dashed #333;
+	padding: 10px;
+}
 
 /* $Id$ */
