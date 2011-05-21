@@ -1,0 +1,12 @@
+# $Id$
+# $URL$
+User-Agent: *
+Allow: /
+Disallow: /ctrl/
+Disallow: /etc/
+Disallow: /i18n/
+Disallow: /mod/
+Disallow: /opt/
+Disallow: /tmp/
+Disallow: /var/
+Disallow: /usr/
