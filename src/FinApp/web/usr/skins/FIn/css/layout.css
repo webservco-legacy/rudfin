@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* *** RESET *** */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html,body {
+	height: 100%;
+	text-align: center;
+}
+
+body {
+	line-height: 1;
+}
+
+img {
+	display: block;
+}
+
+form {
+	display: inline;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+}
+
+:focus {
+	outline: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+/* *** LAYOUT *** */
+body {
+	color: #fff;
+	font-family: Georgia, Norasi, serif;
+	font-size: 80%;
+	text-align: center;
+}
+
+form,input,textarea,select,table,tr,td {
+	font-family: Georgia, Norasi, serif;
+	font-size: 100%;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 170%;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 150%;
+	font-weight: normal;
+}
+
+.strong {
+	font-weight: bold !important;
+}
+
+.thin {
+	font-weight: normal !important;
+}
+
+/* *** GENERAL *** */
+#noscript {
+	background: #900;
+	color: #fff;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: center;
+	border-top: 3px dashed #ff0;
+	border-bottom: 3px dashed #ff0;
+	padding: 30px;
+	position: fixed;
+	top: 20px;
+	width: 100%;
+	z-index: 1;
+}
+
+.container {
+	width: 982px;
+	margin: 0 auto;
+	text-align: left;
+	clear: both;
+}
+
+.clear {
+	float: left;
+	display: inline;
+	width: 982px;
+	clear: both;
+}
+
+.hide {
+	font-size: 0px;
+	text-indent: -9999px;
+	white-space: nowrap;
+	overflow: hidden;
+	outline: none;
+}
+
+.hide a {
+	outline: none;
+}
+
+/* *** TOP *** */
+
+
+/* *** NAVIGATION *** */
+
+
+/* *** HEADER *** */
+
+
+/* *** MAIN *** */
+
+
+/* *** CONTENT *** */
+
+
+
+
+/* *** FOOTER *** */
+
+/* $Id$ */

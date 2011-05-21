@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Id$ -->
+
+<!-- Configuration -->
+<config>
+	<!-- Environment -->
+	<env>dev</env>
+	<!-- Development Environment -->
+	<dev>
+		<path>
+			<core>
+				/home/rudisoft/www/projects/RudWEb-5.0/src/RudWEb/
+			</core>
+			<app>
+				/home/rudisoft/www/projects/RudFin/src/FinApp/app/
+			</app>
+			<www>
+				/home/rudisoft/www/projects/RudFin/src/FinApp/web/
+			</www>
+		</path>
+		<url>
+			<app>
+				http://rudisoft.dev/sandbox/fin/
+			</app>
+		</url>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+	</prod>
+</config>
