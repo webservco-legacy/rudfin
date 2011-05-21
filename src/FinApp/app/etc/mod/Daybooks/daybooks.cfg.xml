@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Id$ -->
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Daybooks module settings -->
+		<daybooks>
+		</daybooks>
+	</dev>
+	<!-- Test Environment -->
+	<test></test>
+	<!-- Production Environment -->
+	<prod></prod>
+</config>

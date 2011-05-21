@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Id$ -->
+
+<!-- Configuration -->
+<config>
+	<!-- Development Environment -->
+	<dev>
+		<!-- Application settings -->
+		<app>
+			<email>rudisoft@rudisoft.net, radu@rudisoft.net</email>
+			<title>Rudisoft Finance</title>
+			<prefix>fin_</prefix>
+			<sessions>1</sessions>
+		</app>
+		<!-- Database settings (general) -->
+		<database>
+			<type>MySQLi</type>
+			<binkey>1</binkey>
+		</database>
+		<!-- Output settings -->
+		<output>
+			<engine>PHPTAL</engine>
+		</output>
+		<!-- Date settings -->
+		<date>
+			<timezone>Europe/Bucharest</timezone>
+		</date>
+	</dev>
+	<!-- Test Environment -->
+	<test>
+	</test>
+	<!-- Production Environment -->
+	<prod>
+	</prod>
+</config>
