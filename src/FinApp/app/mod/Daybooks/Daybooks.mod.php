@@ -38,6 +38,17 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Module_Daybooks extends ModuleApp
 {
+	public function GetBooks()
+	{
+		$data = array();
 
+		$db_data = array( 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
+		$db_table = 'fin_daybooks';
+		$db_options = NULL;
+
+		$data = Core::Database()->Retrieve( $db_data, $db_table, $db_options );
+
+		return $data;
+	}
 }
 ?>
