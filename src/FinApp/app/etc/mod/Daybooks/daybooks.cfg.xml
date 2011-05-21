@@ -59,7 +59,7 @@
 						<title>Notes</title>
 						<description></description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions></conditions>
 					</book_notes>
