@@ -28,6 +28,10 @@
 			<name>daybooks</name>
 			<value>Daybooks/Daybook/ListBooks</value>
 		</route>
+		<route>
+			<name>daybooks/delete/({any})</name>
+			<value>Daybooks/Daybook/ListBooks/delete/$1</value>
+		</route>
 	</dev>
 	<!-- Test Environment -->
 	<test>

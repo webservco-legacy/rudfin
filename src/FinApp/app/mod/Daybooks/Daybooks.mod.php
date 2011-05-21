@@ -40,36 +40,77 @@ class Module_Daybooks extends ModuleApp
 {
 	public function GetBooks()
 	{
-		$data = array();
+		/**
+		 * @var array
+		 */
+		$db_data = array( 'bin.book_id', 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
 
-		$db_data = array( 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
+		/**
+		 * @var array
+		 */
 		$db_table = 'fin_object_daybook';
+
+		/**
+		 * @var array
+		 */
 		$db_options = NULL;
 
-		$data = Core::Database()->Retrieve( $db_data, $db_table, $db_options );
-
-		return $data;
+		return Core::Database()->Retrieve( $db_data, $db_table, $db_options );
 	}
 
-	public function HandleBooksForm()
+	public function HandleBooksDelete( $request )
+	{
+		if ( !empty( $request['query']['delete'] ) )
+		{
+			/**
+			 * @var array
+			 */
+			$db_options['conditions'] = array( 'bin.book_id', $request['query']['delete'] );
+
+			/**
+			 * @var array
+			 */
+			$db_options['limit'] = 1;
+
+			Core::Database()->Delete( 'fin_daybooks', $db_options );
+
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	public function HandleBooksAdd()
 	{
 		Core::Form()->SetMethod( 'post' );
 
 		Core::Form()->SetData( Core::Config()->Get( 'daybooks.form.daybook_add' ) );
 
+		/**
+		 * @var array
+		 */
 		$form['meta'] = Core::Form()->GetMeta();
 
+		/**
+		 * @var array
+		 */
 		$form['errors'] = array();
 
 		if ( !empty( $_POST ) )
 		{
+			/**
+			 * @var bool
+			 */
 			$validation = Core::Form()->Validate();
 
 			if ( FALSE !== $validation )
 			{
+				/**
+				 * @var array
+				 */
 				$form['data'] = Core::Form()->GetFilteredData();
 
-				unset($form['data']['book_add']); //XXX HACK
+				unset($form['data']['book_add']);
 
 				Core::Database()->Create( $form['data'], 'fin_daybooks' );
 
@@ -77,13 +118,22 @@ class Module_Daybooks extends ModuleApp
 			}
 			else
 			{
+				/**
+				 * @var array
+				 */
 				$form['data'] = Core::Form()->GetData();
 
+				/**
+				 * @var array
+				 */
 				$form['errors'] = Core::Form()->GetErrors();
 			}
 		}
 		else
 		{
+			/**
+			 * @var array
+			 */
 			$form['data'] = Core::Form()->GetData();
 		}
 

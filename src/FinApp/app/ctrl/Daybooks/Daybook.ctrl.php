@@ -42,6 +42,9 @@ class Controller_Daybooks_Daybook extends ControllerApp
 {
 	public function ListBooks()
 	{
+
+		$this->Module()->HandleBooksDelete( $this->_mRequest );
+
 		/**
 		 * @var string
 		 */
@@ -55,13 +58,13 @@ class Controller_Daybooks_Daybook extends ControllerApp
 		/**
 		 * @var array
 		 */
-		$data['form'] = $this->Module()->HandleBooksForm();
+		$data['form'] = $this->Module()->HandleBooksAdd();
 
 		/**
-		 * @var books
+		 * @var array
 		 */
 		$data['books'] = $this->Module()->GetBooks();
-		
+
 		echo $this->GetOutput( $data );
 
 		return TRUE;

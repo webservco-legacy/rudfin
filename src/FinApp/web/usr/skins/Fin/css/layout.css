@@ -64,9 +64,10 @@ input[type="submit"] {
 
 /* *** LAYOUT *** */
 body {
-	background: #eee;
-	color: #333;
-	font-family: Georgia, Norasi, serif;
+	background: #cfc;
+	color: #777;
+	font-family: Tahoma, Geneva, Kalimati, sans-serif;
+	line-height: 1.4;
 	font-size: 100%;
 	text-align: center;
 }

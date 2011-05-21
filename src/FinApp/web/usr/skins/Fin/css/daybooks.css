@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
 /* *** DAYBOOKS *** */
+.book_add table {
+	width: 960px;
+}
+
 .book_add th {
 	background: #ddd;
 	border: 1px dashed #333;
@@ -12,8 +16,27 @@
 	padding: 10px;
 }
 
-.book_add input[type="text"] {
+.book_add select,.book_add input[type="text"] {
 	width: 100px;
+	background: #eee;
+	border: 1px solid #999;
+	text-align: center;
+	padding: 3px 0 3px 0;
+}
+
+.book_add option {
+	background: #eee;
+}
+
+.book_add input[type="submit"] {
+	width: 100px;
+	background: #ccc;
+	border: 1px solid #999;
+	background: #ccc;
+}
+
+table.books {
+	width: 960px;
 }
 
 table.books th {
