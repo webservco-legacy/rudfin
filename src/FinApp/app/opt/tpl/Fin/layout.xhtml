@@ -53,45 +53,37 @@
 		
 		<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/${page}.css" class="ajax" />
 		
+		<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/datePicker.css" class="ajax" />
+		
 		<tal:block metal:use-macro="layout_scripts.xhtml/scripts_top"></tal:block> 
 		 
 	</head> 
 	<body>
-		
-		<!-- CUSTOM TOP START -->
 		<div id="header" class="container">
-			&#160;
+			
+			<h1>RudFin</h1>
+			
+			<p>RudiSoft.Net Finance</p>
+			
+			<nav id="menu">
+				<ul>
+					<li><a tal:attributes="class php: page EQ 'daybooks' ? 'active' : ''" href="${url_app}daybooks" title="Daybooks">Daybooks</a></li>
+				</ul>
+			</nav>
 		</div>
-		<!-- CUSTOM TOP END -->
-		
-		<!-- NAVIGATION START -->
-		<div class="container navigation">
-			&#160;
-		</div>
-		<!-- NAVIGATION END -->
-		
-		<!-- HEADER START -->
-		<div class="container header">
-			&#160;
-		</div>
-		<!-- HEADER END -->
 		
 		<!-- CUSTOM CONTENT START -->
-		<div class="container wrapper">
-			<div class="container main">
-				
-				<div class="content" id="content-main">
+		<div id="main" class="container">
 					<tal:block metal:define-slot="content-main" />
-				</div>
-
 				<div class="clear">&#160;</div>
-			</div>
 		</div>
 		<!-- CUSTOM CONTENT END -->
 		
 		<!-- FOOTER START -->
-		<div class="container footer">
-			&#160;
+		<div id="footer" class="container">
+		
+			<address>Copyright (c) 2008 - 2011, RudiSoft.Net</address>
+			
 		</div>
 		<!-- FOOTER END -->
 		

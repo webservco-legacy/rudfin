@@ -2,12 +2,13 @@
 
 /* *** DAYBOOKS *** */
 .book_add table {
-	width: 960px;
+	width: 930px;
 }
 
 .book_add th {
-	background: #ddd;
-	border: 1px dashed #333;
+	background: #777;
+	color: #ffc;
+	border: 1px dashed #ffc;
 	padding: 10px;
 }
 
@@ -18,8 +19,9 @@
 
 .book_add select,.book_add input[type="text"] {
 	width: 100px;
-	background: #eee;
-	border: 1px solid #999;
+	background: #ffc;
+	border: 1px solid #777;
+	color: #777;
 	text-align: center;
 	padding: 3px 0 3px 0;
 }
@@ -30,18 +32,20 @@
 
 .book_add input[type="submit"] {
 	width: 100px;
-	background: #ccc;
-	border: 1px solid #999;
-	background: #ccc;
+	background: #777;
+	border: 1px solid #ffc;
+	color: #ffc;
+	padding: 5px;
 }
 
 table.books {
-	width: 960px;
+	width: 930px;
 }
 
 table.books th {
-	background: #ddd;
-	border: 1px dashed #333;
+	background: #777;
+	color: #ffc;
+	border: 1px dashed #ffc;
 	padding: 10px;
 }
 

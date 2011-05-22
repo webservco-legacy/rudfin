@@ -147,22 +147,23 @@ h2 {
 }
 
 /* *** HEADER *** */
-header {
+#header {
+	width: 980px;
 	margin: 0 auto;
 	padding: 2.5em 0 0 0;
 }
 
-header .content {
+#header .content {
 	padding-left: 0;
 }
 
-header h1 {
+#header h1 {
 	font-size: 3.6em;
 	line-height: .6;
 	margin: 0 0 .6em 0;
 }
 
-header p {
+#header p {
 	font-size: 1.6em;
 	font-style: italic;
 	margin: -31px 0 0 22px;
@@ -171,14 +172,78 @@ header p {
 	padding-bottom: 10px;
 }
 
+#menu {
+	width: 980px;
+	background: #777;
+	color: #ffc;
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 0px 0px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#menu ul {
+	float: left;
+	list-style: none;
+	margin: 0 auto;
+	width: 500px;
+	list-style: none;
+}
+
+#menu ul li {
+	float: left;
+	width: auto;
+	display: inline;
+	margin: 0;
+	display: inline;
+}
+
+#menu ul li a {
+	display: inline-block;
+	padding: 15px 1.5em;
+	text-decoration: none;
+}
+
+#menu ul li:first-child a {
+	border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+#menu ul li a:link,#menu ul li a:visited {
+	text-decoration: none;
+	border: 0;
+	color: #ffc;
+}
+
+#menu ul li a.active,#menu ul li a:hover,#menu ul li a:active {
+	text-decoration: none;
+	border: 0;
+	background: #ffc;
+	color: #777;
+}
+
 /* *** MAIN *** */
-
-
-/* *** CONTENT *** */
-
-
-
+#main {
+	width: 940px;
+	background: #ffc;
+	margin-bottom: 2em;
+	overflow: hidden;
+	padding: 20px 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
 
 /* *** FOOTER *** */
+#footer {
+	padding-bottom: 2em;
+	text-align: right;
+}
 
 /* $Id$ */

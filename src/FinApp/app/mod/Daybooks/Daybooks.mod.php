@@ -73,6 +73,8 @@ class Module_Daybooks extends ModuleApp
 			$db_options['limit'] = 1;
 
 			Core::Database()->Delete( 'fin_daybooks', $db_options );
+			
+			Core::Router()->Redirect( 'daybooks' );
 
 			return TRUE;
 		}

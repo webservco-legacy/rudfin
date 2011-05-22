@@ -12,8 +12,12 @@
  -->
 </comment>
 <tal:block metal:define-macro="scripts_top">
-<comment tal:replace="">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+		<script type="text/javascript" src="${url_scripts}/jQuery/jquery-1.5.min.js"></script>
+		
+		<script type="text/javascript" src="${url_scripts}/datePicker/date.js"></script>
+		
+		<script type="text/javascript" src="${url_scripts}/datePicker/jquery.datePicker.js"></script>
 		
 		<script type="text/javascript"> 
 		//<![CDATA[
@@ -22,12 +26,11 @@
 		} );
 		//]]>
 		</script>
-</comment>
 		
 </tal:block>
 
 <tal:block metal:define-macro="scripts_bottom">
-<comment tal:replace="">
+
 		<script type="text/javascript"> 
 		//<![CDATA[
 		$( document ).ready( function() {
@@ -35,5 +38,5 @@
 		} );
 		//]]>
 		</script>
-</comment>		
+		
 </tal:block>
