@@ -146,14 +146,30 @@ h2 {
 	text-align: right !important;
 }
 
-/* *** TOP *** */
-
-
-/* *** NAVIGATION *** */
-
-
 /* *** HEADER *** */
+header {
+	margin: 0 auto;
+	padding: 2.5em 0 0 0;
+}
 
+header .content {
+	padding-left: 0;
+}
+
+header h1 {
+	font-size: 3.6em;
+	line-height: .6;
+	margin: 0 0 .6em 0;
+}
+
+header p {
+	font-size: 1.6em;
+	font-style: italic;
+	margin: -31px 0 0 22px;
+	text-align: right;
+	letter-spacing: 0.2em;
+	padding-bottom: 10px;
+}
 
 /* *** MAIN *** */
 
