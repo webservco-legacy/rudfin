@@ -38,7 +38,7 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Module_Daybooks extends ModuleApp
 {
-	public function GetBooks()
+	public function GetBooks( $ascending = FALSE )
 	{
 		/**
 		 * @var array
@@ -53,7 +53,7 @@ class Module_Daybooks extends ModuleApp
 		/**
 		 * @var array
 		 */
-		$db_options = NULL;
+		$db_options = ( FALSE !== $ascending ) ? array( 'order' => array( 'book_date' ) ) : NULL;
 
 		return Core::Database()->Retrieve( $db_data, $db_table, $db_options );
 	}

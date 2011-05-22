@@ -1,0 +1,101 @@
+<comment tal:replace="">
+<!-- 
+/**
+ * $Id$
+ *
+ * Layout.
+ *
+ * @author     Radu Maier <rudisoft@rudisoft.net>
+ * @copyright  Copyright (c) 2008 - 2011, RudiSoft.Net
+ * @license    http://www.opensource.org/licenses/bsd-license.php
+ */
+ -->
+</comment>
+
+	<tal:block metal:use-macro="layout.xhtml/layout">
+		
+		<tal:block metal:fill-slot="content-header">
+			
+			<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			</p>
+		</tal:block>
+		
+		<tal:block metal:fill-slot="content-main">
+		
+			<h1 tal:content="title">Title</h1>
+			<br />
+			
+			<form class="book_add" enctype="multipart/form-data" method="post" action="">
+				<table>
+					<tr>
+						<th tal:repeat="form_meta form/meta">
+							${form_meta/title}
+						</th>
+					</tr>
+					<tr>
+						<td tal:repeat="form_meta form/meta">
+							<input tal:condition="php: form_meta['type'] EQ 'text'" tal:attributes="type form_meta/type; class php: repeat.form_meta.key EQ 'book_date' ? 'date' : ''" type="text" name="${repeat/form_meta/key}" value="" />
+							<select tal:condition="php: repeat.form_meta.key EQ 'book_account'" name="book_account">
+								<option value="cash">cash</option>
+								<option value="bank">bank</option>
+							</select>
+							<select tal:condition="php: repeat.form_meta.key EQ 'book_type'" name="book_type">
+								<option value="payment">payment</option>
+								<option value="income">income</option>
+							</select>
+							<input tal:condition="php: repeat.form_meta.key EQ 'book_add'" type="submit" name="book_add" value="Add" />
+						</td>
+					</tr>
+				</table>
+			</form>
+			
+			<br />
+			
+			<table class="books">
+				<tr>
+					<th style="width: 100px;">Date</th>
+					<th>Account</th>
+					<th>Income</th>
+					<th>Payment</th>
+					<th>Document</th>
+					<th>Notes</th>
+					<th>&#160;</th>
+				</tr>
+				<tr tal:repeat="book books">
+					<td tal:content="book/book_date">&#160;</td>
+					<td tal:content="book/book_account">&#160;</td>
+					<td class="align-right">
+						&#160;<span tal:condition="php: book['book_type'] EQ 'income'" tal:content="book/book_amount"></span>
+					</td>
+					<td class="align-right">
+						&#160;<span tal:condition="php: book['book_type'] EQ 'payment'" tal:content="book/book_amount"></span>
+					</td>
+					<td tal:content="book/book_document">&#160;</td>
+					<td tal:content="book/book_notes">&#160;</td>
+					<td><a href="${url_app}daybooks/delete/${book/bin.book_id}" title="Delete">Delete</a></td>
+				</tr>
+			</table>
+			
+			<script type="text/javascript"> 
+			//<![CDATA[
+			$( document ).ready( function() {
+				
+				Date.firstDayOfWeek = 0;
+				Date.format = 'yyyy-mm-dd';
+				
+				$( ".date" ).datePicker( {
+					clickInput: true,
+					createButton: false,
+					year: 2010,
+					month: 0,
+					startDate: '2010-01-01'
+				} );
+							
+			} );
+			//]]>
+		</script>
+			
+		</tal:block>
+		
+	</tal:block>

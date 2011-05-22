@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* *** DAYBOOKS *** */
+.book_add table {
+	width: 930px;
+}
+
+.book_add th {
+	background: #777;
+	color: #ffc;
+	border: 1px dashed #ffc;
+	padding: 10px;
+}
+
+.book_add td {
+	border: 1px dashed #333;
+	padding: 10px;
+}
+
+.book_add select,.book_add input[type="text"] {
+	width: 100px;
+	background: #ffc;
+	border: 1px solid #777;
+	color: #777;
+	text-align: center;
+	padding: 3px 0 3px 0;
+}
+
+.book_add option {
+	background: #eee;
+}
+
+.book_add input[type="submit"] {
+	width: 100px;
+	background: #777;
+	border: 1px solid #ffc;
+	color: #ffc;
+	padding: 5px;
+}
+
+table.books {
+	width: 930px;
+}
+
+table.books th {
+	background: #777;
+	color: #ffc;
+	border: 1px dashed #ffc;
+	padding: 10px;
+}
+
+table.books td {
+	border: 1px dashed #333;
+	padding: 10px;
+}
+
+/* $Id$ */

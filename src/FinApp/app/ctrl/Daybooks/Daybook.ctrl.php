@@ -40,11 +40,38 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Controller_Daybooks_Daybook extends ControllerApp
 {
-	public function ListBooks()
+	public function AddBooks()
 	{
 
 		$this->Module()->HandleBooksDelete( $this->_mRequest );
 
+		/**
+		 * @var string
+		 */
+		$data['title'] = 'Daybooks - Manage';
+
+		/**
+		 * @var string
+		 */
+		$data['page'] = 'addbooks';
+
+		/**
+		 * @var array
+		 */
+		$data['form'] = $this->Module()->HandleBooksAdd();
+
+		/**
+		 * @var array
+		 */
+		$data['books'] = $this->Module()->GetBooks();
+
+		echo $this->GetOutput( $data );
+
+		return TRUE;
+	}
+
+	public function ListBooks()
+	{
 		/**
 		 * @var string
 		 */
@@ -58,12 +85,7 @@ class Controller_Daybooks_Daybook extends ControllerApp
 		/**
 		 * @var array
 		 */
-		$data['form'] = $this->Module()->HandleBooksAdd();
-
-		/**
-		 * @var array
-		 */
-		$data['books'] = $this->Module()->GetBooks();
+		$data['books'] = $this->Module()->GetBooks( TRUE );
 
 		echo $this->GetOutput( $data );
 

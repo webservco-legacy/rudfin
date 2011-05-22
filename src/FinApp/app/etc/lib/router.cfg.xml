@@ -29,6 +29,10 @@
 			<value>Daybooks/Daybook/ListBooks</value>
 		</route>
 		<route>
+			<name>addbooks</name>
+			<value>Daybooks/Daybook/AddBooks</value>
+		</route>
+		<route>
 			<name>daybooks/delete/({any})</name>
 			<value>Daybooks/Daybook/ListBooks/delete/$1</value>
 		</route>
