@@ -47,6 +47,8 @@ table.books th {
 	color: #ffc;
 	border: 1px dashed #ffc;
 	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 table.books td {

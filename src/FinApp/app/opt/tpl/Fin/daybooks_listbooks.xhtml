@@ -28,23 +28,34 @@
 			
 			<table class="books">
 				<tr>
+					<th rowspan="2">No.</th>
 					
-					<th style="width: 100px;">Date</th>
+					<th style="width: 100px;" rowspan="2">Date</th>
 					
-					<th>Document</th>
+					<th rowspan="2">Document</th>
 					
-					<th>Notes</th>
+					<th rowspan="2">Notes</th>
 					
-					<th>Income cash</th>
+					<th colspan="2">Income</th>
 					
-					<th>Income bank</th>
+					<th colspan="2">Payment</th>
 					
-					<th>Payment cash</th>
+				</tr>
+				
+				<tr>
 					
-					<th>Payment bank</th>
+					<th>cash</th>
+					
+					<th>bank</th>
+					
+					<th>cash</th>
+					
+					<th>bank</th>
 					
 				</tr>
 				<tr tal:repeat="book books">
+					
+					<td class="align-right" tal:content="php: repeat.book.number+40">&#160;</td>
 					
 					<td tal:content="book/book_date">&#160;</td>
 					
