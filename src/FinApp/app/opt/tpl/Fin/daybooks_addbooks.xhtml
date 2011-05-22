@@ -35,7 +35,7 @@
 					</tr>
 					<tr>
 						<td tal:repeat="form_meta form/meta">
-							<input tal:condition="php: form_meta['type'] EQ 'text'" tal:attributes="type form_meta/type; class php: repeat.form_meta.key EQ 'book_date' ? 'date' : ''" type="text" name="${repeat/form_meta/key}" value="" />
+							<input tal:condition="php: form_meta['type'] EQ 'text'" tal:attributes="type form_meta/type; class php: repeat.form_meta.key EQ 'book_date' ? 'date' : ''; value php: repeat.form_meta.key EQ 'book_number' ? next_book : ''" type="text" name="${repeat/form_meta/key}" value="" />
 							<select tal:condition="php: repeat.form_meta.key EQ 'book_account'" name="book_account">
 								<option value="cash">cash</option>
 								<option value="bank">bank</option>
@@ -54,6 +54,7 @@
 			
 			<table class="books">
 				<tr>
+					<th>Number</th>
 					<th style="width: 100px;">Date</th>
 					<th>Account</th>
 					<th>Income</th>
@@ -63,6 +64,7 @@
 					<th>&#160;</th>
 				</tr>
 				<tr tal:repeat="book books">
+					<td tal:content="book/book_number">&#160;</td>
 					<td tal:content="book/book_date">&#160;</td>
 					<td tal:content="book/book_account">&#160;</td>
 					<td class="align-right">
@@ -73,7 +75,7 @@
 					</td>
 					<td tal:content="book/book_document">&#160;</td>
 					<td tal:content="book/book_notes">&#160;</td>
-					<td><a href="${url_app}daybooks/delete/${book/bin.book_id}" title="Delete">Delete</a></td>
+					<td><a href="${url_app}addbooks/delete/${book/bin.book_id}" title="Delete">Delete</a></td>
 				</tr>
 			</table>
 			
@@ -87,7 +89,7 @@
 				$( ".date" ).datePicker( {
 					clickInput: true,
 					createButton: false,
-					year: 2010,
+					year: 2009,
 					month: 0,
 					startDate: '2010-01-01'
 				} );

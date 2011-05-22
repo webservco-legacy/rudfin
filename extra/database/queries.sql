@@ -20,4 +20,6 @@ SUM( IF( book_account = 'bank', IF( book_type = 'income', book_amount, -book_amo
 SUM( IF( book_account = 'cash', IF( book_type = 'income', book_amount, 0 ), 0 ) ) AS cash_income,
 SUM( IF( book_account = 'cash', IF( book_type = 'payment', book_amount, 0 ), 0 ) ) AS cash_payments,
 SUM( IF( book_account = 'cash', IF( book_type = 'income', book_amount, -book_amount ), 0 ) ) AS cash_balance
-FROM fin_object_daybook;
+FROM fin_object_daybook
+WHERE YEAR(book_date) = '2010'
+;

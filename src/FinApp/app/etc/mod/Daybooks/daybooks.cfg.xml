@@ -9,12 +9,21 @@
 		<daybooks>
 			<form>
 				<daybook_add>
+					<book_number>
+						<type>text</type>
+						<title>Number</title>
+						<description></description>
+						<content></content>
+						<required>0</required>
+						<filters>StripTags</filters>
+						<conditions>HasLengthMin[1]</conditions>
+					</book_number>
 					<book_date>
 						<type>text</type>
 						<title>Date</title>
 						<description></description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions>HasLengthMin[10]|HasLengthMax[10]</conditions>
 					</book_date>
@@ -23,7 +32,7 @@
 						<title>Account</title>
 						<description>bank/cash</description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions></conditions>
 					</book_account>
@@ -32,7 +41,7 @@
 						<title>Type</title>
 						<description>income/payment</description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions></conditions>
 					</book_type>
@@ -41,7 +50,7 @@
 						<title>Amount</title>
 						<description></description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions></conditions>
 					</book_amount>
@@ -50,7 +59,7 @@
 						<title>Document</title>
 						<description></description>
 						<content></content>
-						<required>1</required>
+						<required>0</required>
 						<filters>StripTags</filters>
 						<conditions></conditions>
 					</book_document>

@@ -33,8 +33,8 @@
 			<value>Daybooks/Daybook/AddBooks</value>
 		</route>
 		<route>
-			<name>daybooks/delete/({any})</name>
-			<value>Daybooks/Daybook/ListBooks/delete/$1</value>
+			<name>addbooks/delete/({any})</name>
+			<value>Daybooks/Daybook/AddBooks/delete/$1</value>
 		</route>
 	</dev>
 	<!-- Test Environment -->

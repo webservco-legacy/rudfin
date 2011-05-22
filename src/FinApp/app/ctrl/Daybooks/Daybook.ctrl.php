@@ -65,6 +65,11 @@ class Controller_Daybooks_Daybook extends ControllerApp
 		 */
 		$data['books'] = $this->Module()->GetBooks();
 
+		/**
+		 * @var int
+		 */
+		$data['next_book'] = Core::Database()->GetNext( 'book_number', 'fin_daybooks' );
+
 		echo $this->GetOutput( $data );
 
 		return TRUE;
@@ -85,7 +90,7 @@ class Controller_Daybooks_Daybook extends ControllerApp
 		/**
 		 * @var array
 		 */
-		$data['books'] = $this->Module()->GetBooks( TRUE );
+		$data['books'] = $this->Module()->GetBooks();
 
 		echo $this->GetOutput( $data );
 

@@ -38,12 +38,12 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Module_Daybooks extends ModuleApp
 {
-	public function GetBooks( $ascending = FALSE )
+	public function GetBooks()
 	{
 		/**
 		 * @var array
 		 */
-		$db_data = array( 'bin.book_id', 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
+		$db_data = array( 'bin.book_id', 'book_number', 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
 
 		/**
 		 * @var array
@@ -53,7 +53,7 @@ class Module_Daybooks extends ModuleApp
 		/**
 		 * @var array
 		 */
-		$db_options = ( FALSE !== $ascending ) ? array( 'order' => array( 'book_date' ) ) : NULL;
+		$db_options = NULL;
 
 		return Core::Database()->Retrieve( $db_data, $db_table, $db_options );
 	}
@@ -73,8 +73,8 @@ class Module_Daybooks extends ModuleApp
 			$db_options['limit'] = 1;
 
 			Core::Database()->Delete( 'fin_daybooks', $db_options );
-			
-			Core::Router()->Redirect( 'daybooks' );
+
+			Core::Router()->Redirect( 'addbooks' );
 
 			return TRUE;
 		}

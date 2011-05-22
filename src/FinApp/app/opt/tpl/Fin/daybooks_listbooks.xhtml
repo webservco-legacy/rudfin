@@ -55,7 +55,7 @@
 				</tr>
 				<tr tal:repeat="book books">
 					
-					<td class="align-right" tal:content="php: repeat.book.number+40">&#160;</td>
+					<td class="align-right" tal:content="book/book_number">&#160;</td>
 					
 					<td tal:content="book/book_date">&#160;</td>
 					
