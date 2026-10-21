@@ -22,10 +22,10 @@
  */
 if ( !defined( '_RUDWEB' ) )
 {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -40,23 +40,23 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Controller_Oups_Core extends ControllerApp
 {
-	public function Oups404()
-	{
-		/**
-		 * @var string
-		 */
-		$data['title'] = 'Page Not Found';
+    public function Oups404()
+    {
+        /**
+         * @var string
+         */
+        $data['title'] = 'Page Not Found';
 
-		/**
-		 * @var string
-		 */
-		$data['page'] = 'error';
+        /**
+         * @var string
+         */
+        $data['page'] = 'error';
 
-		header('HTTP/1.1 404 Not Found');
+        header('HTTP/1.1 404 Not Found');
 
-		echo $this->GetOutput( $data );
+        echo $this->GetOutput( $data );
 
-		return TRUE;
-	}
+        return TRUE;
+    }
 }
 ?>

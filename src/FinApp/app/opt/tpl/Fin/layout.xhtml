@@ -14,81 +14,81 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" metal:define-macro="layout"> 
-	<head> 
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-		
-		<meta http-equiv="content-language" content="en" /> 
-		
-		<link rel="icon" type="image/ico" href="./img/favicon.ico" tal:attributes="href string:${url_skin}img/favicon.ico" /> 
-		
-		<link rel="shortcut icon" type="image/ico" tal:attributes="href string:${url_skin}img/favicon.ico" /> 
-		
-		<title tal:define="global page_title string:${title} - ${title_app}" tal:content="page_title">RudFin</title> 
-		
-		<meta name="title" content="title" tal:attributes="content page_title" />
-		
-		<meta name="subject" content="subject" tal:attributes="content page_title" />
-		
-		<meta name="description" content="description" tal:condition="exists:meta" tal:attributes="content meta/description" />
-		
-		<meta name="keywords" content="keywords" tal:condition="exists:meta" tal:attributes="content meta/keywords" />
-		
-		<meta name="copyright" content="Copyright &copy; 2010 - 2011 RudiSoft.Net All rights reserved" />
-		
-		<meta name="designer" content="Radu Maier, RudiSoft.Net" />
-		
-		<meta name="publisher" content="Radu Maier, RudiSoft.Net" />
-		
-		<meta name="author" content="Radu Maier, RudiSoft.Net" />
-		
-		<meta name="rating" content="General" />
-		
-		<meta name="distribution" content="Global" />
-		
-		<meta name="robots" content="Index, Follow" />
-		
-		<meta http-equiv="Content-Style-Type" content="text/css" /> 
-		
-		<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/layout.css" tal:attributes="href string:${url_skin}css/layout.css" />
-		
-		<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/${page}.css" class="ajax" />
-		
-		<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/datePicker.css" class="ajax" />
-		
-		<tal:block metal:use-macro="layout_scripts.xhtml/scripts_top"></tal:block> 
-		 
-	</head> 
-	<body>
-		<div id="header" class="container">
-			
-			<h1>RudFin</h1>
-			
-			<p>RudiSoft.Net Finance</p>
-			
-			<nav id="menu">
-				<ul>
-					<li><a tal:attributes="class php: page EQ 'daybooks' ? 'active' : ''" href="${url_app}daybooks" title="Daybooks">List</a></li>
-					<li><a tal:attributes="class php: page EQ 'addbooks' ? 'active' : ''" href="${url_app}addbooks" title="Daybooks">Manage</a></li>
-				</ul>
-			</nav>
-		</div>
-		
-		<!-- CUSTOM CONTENT START -->
-		<div id="main" class="container">
-					<tal:block metal:define-slot="content-main" />
-				<div class="clear">&#160;</div>
-		</div>
-		<!-- CUSTOM CONTENT END -->
-		
-		<!-- FOOTER START -->
-		<div id="footer" class="container">
-		
-			<address>Copyright (c) 2008 - 2011, RudiSoft.Net</address>
-			
-		</div>
-		<!-- FOOTER END -->
-		
-		<tal:block metal:use-macro="layout_scripts.xhtml/scripts_bottom"></tal:block>
-		
-	</body>
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        
+        <meta http-equiv="content-language" content="en" /> 
+        
+        <link rel="icon" type="image/ico" href="./img/favicon.ico" tal:attributes="href string:${url_skin}img/favicon.ico" /> 
+        
+        <link rel="shortcut icon" type="image/ico" tal:attributes="href string:${url_skin}img/favicon.ico" /> 
+        
+        <title tal:define="global page_title string:${title} - ${title_app}" tal:content="page_title">RudFin</title> 
+        
+        <meta name="title" content="title" tal:attributes="content page_title" />
+        
+        <meta name="subject" content="subject" tal:attributes="content page_title" />
+        
+        <meta name="description" content="description" tal:condition="exists:meta" tal:attributes="content meta/description" />
+        
+        <meta name="keywords" content="keywords" tal:condition="exists:meta" tal:attributes="content meta/keywords" />
+        
+        <meta name="copyright" content="Copyright &copy; 2010 - 2011 RudiSoft.Net All rights reserved" />
+        
+        <meta name="designer" content="Radu Maier, RudiSoft.Net" />
+        
+        <meta name="publisher" content="Radu Maier, RudiSoft.Net" />
+        
+        <meta name="author" content="Radu Maier, RudiSoft.Net" />
+        
+        <meta name="rating" content="General" />
+        
+        <meta name="distribution" content="Global" />
+        
+        <meta name="robots" content="Index, Follow" />
+        
+        <meta http-equiv="Content-Style-Type" content="text/css" /> 
+        
+        <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/layout.css" tal:attributes="href string:${url_skin}css/layout.css" />
+        
+        <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/${page}.css" class="ajax" />
+        
+        <link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="./css/home.css" tal:attributes="href string:${url_skin}css/datePicker.css" class="ajax" />
+        
+        <tal:block metal:use-macro="layout_scripts.xhtml/scripts_top"></tal:block> 
+         
+    </head> 
+    <body>
+        <div id="header" class="container">
+            
+            <h1>RudFin</h1>
+            
+            <p>RudiSoft.Net Finance</p>
+            
+            <nav id="menu">
+                <ul>
+                    <li><a tal:attributes="class php: page EQ 'daybooks' ? 'active' : ''" href="${url_app}daybooks" title="Daybooks">List</a></li>
+                    <li><a tal:attributes="class php: page EQ 'addbooks' ? 'active' : ''" href="${url_app}addbooks" title="Daybooks">Manage</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- CUSTOM CONTENT START -->
+        <div id="main" class="container">
+                    <tal:block metal:define-slot="content-main" />
+                <div class="clear">&#160;</div>
+        </div>
+        <!-- CUSTOM CONTENT END -->
+        
+        <!-- FOOTER START -->
+        <div id="footer" class="container">
+        
+            <address>Copyright (c) 2008 - 2011, RudiSoft.Net</address>
+            
+        </div>
+        <!-- FOOTER END -->
+        
+        <tal:block metal:use-macro="layout_scripts.xhtml/scripts_bottom"></tal:block>
+        
+    </body>
 </html>

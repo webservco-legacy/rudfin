@@ -20,10 +20,10 @@
  */
 if ( !defined( '_RUDWEB' ) )
 {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -38,41 +38,41 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Daybook extends Object
 {
-	/**
-	 * Object properties.
-	 *
-	 * @var array
-	 */
-	public $mProp = array(
-		'list' => array(
-			'bin.book_id' => NULL,
-			'book_date' => NULL,
-			'book_account' => NULL,
-			'book_type' => NULL,
-			'book_amount' => NULL,
-			'book_document' => NULL,
-			'book_notes' => NULL,
-	),
-		'store' => array(
-			'bin.book_id' => NULL,
-			'book_date' => NULL,
-			'book_account' => NULL,
-			'book_type' => NULL,
-			'book_amount' => NULL,
-			'book_document' => NULL,
-			'book_notes' => NULL,
-	),
-		'i18n' => array(
-	),
-	);
+    /**
+     * Object properties.
+     *
+     * @var array
+     */
+    public $mProp = array(
+        'list' => array(
+            'bin.book_id' => NULL,
+            'book_date' => NULL,
+            'book_account' => NULL,
+            'book_type' => NULL,
+            'book_amount' => NULL,
+            'book_document' => NULL,
+            'book_notes' => NULL,
+    ),
+        'store' => array(
+            'bin.book_id' => NULL,
+            'book_date' => NULL,
+            'book_account' => NULL,
+            'book_type' => NULL,
+            'book_amount' => NULL,
+            'book_document' => NULL,
+            'book_notes' => NULL,
+    ),
+        'i18n' => array(
+    ),
+    );
 
-	/**
-	 * Object tables.
-	 *
-	 * Use NULL for default.
-	 *
-	 * @var string
-	 */
-	protected $_mTable = array( 'store' => 'fin_daybooks', 'i18n' => NULL );
+    /**
+     * Object tables.
+     *
+     * Use NULL for default.
+     *
+     * @var string
+     */
+    protected $_mTable = array( 'store' => 'fin_daybooks', 'i18n' => NULL );
 }
 ?>

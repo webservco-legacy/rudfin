@@ -141,12 +141,12 @@ CREATE TRIGGER fin_daybooks_insert
 BEFORE INSERT ON fin_daybooks
 FOR EACH ROW
 BEGIN
-	IF NEW.book_id = '00' THEN
-		SET NEW.book_id = UNHEX( REPLACE( UUID(), '-', '' ) );
-	END IF;
-	IF NEW.book_date = '0000-00-00 00:00:00' THEN
-		SET NEW.book_date = NOW();
-	END IF;
+    IF NEW.book_id = '00' THEN
+        SET NEW.book_id = UNHEX( REPLACE( UUID(), '-', '' ) );
+    END IF;
+    IF NEW.book_date = '0000-00-00 00:00:00' THEN
+        SET NEW.book_date = NOW();
+    END IF;
 END;$$
 
 

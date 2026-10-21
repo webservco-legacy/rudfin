@@ -3,44 +3,44 @@
 
 <!-- Configuration -->
 <config>
-	<!-- Development Environment -->
-	<dev>
-		<!-- Default configuration -->
-		<router>
-			<default>
-				<module>Daybooks</module>
-				<controller>Daybook</controller>
-				<action>ListBooks</action>
-			</default>
-		</router>
-		<!-- SEO settings -->
-		<seo>
-			<full>1</full>
-			<extension></extension>
-		</seo>
-		<!-- Custom routes configuration -->
-		<route>
-			<!-- "index" is the default route. It doesn't have to be the fist one. -->
-			<name>index</name>
-			<value>Daybooks/Daybook/ListBooks</value>
-		</route>
-		<route>
-			<name>daybooks</name>
-			<value>Daybooks/Daybook/ListBooks</value>
-		</route>
-		<route>
-			<name>addbooks</name>
-			<value>Daybooks/Daybook/AddBooks</value>
-		</route>
-		<route>
-			<name>addbooks/delete/({any})</name>
-			<value>Daybooks/Daybook/AddBooks/delete/$1</value>
-		</route>
-	</dev>
-	<!-- Test Environment -->
-	<test>
-	</test>
-	<!-- Production Environment -->
-	<prod>
-	</prod>
+    <!-- Development Environment -->
+    <dev>
+        <!-- Default configuration -->
+        <router>
+            <default>
+                <module>Daybooks</module>
+                <controller>Daybook</controller>
+                <action>ListBooks</action>
+            </default>
+        </router>
+        <!-- SEO settings -->
+        <seo>
+            <full>1</full>
+            <extension></extension>
+        </seo>
+        <!-- Custom routes configuration -->
+        <route>
+            <!-- "index" is the default route. It doesn't have to be the fist one. -->
+            <name>index</name>
+            <value>Daybooks/Daybook/ListBooks</value>
+        </route>
+        <route>
+            <name>daybooks</name>
+            <value>Daybooks/Daybook/ListBooks</value>
+        </route>
+        <route>
+            <name>addbooks</name>
+            <value>Daybooks/Daybook/AddBooks</value>
+        </route>
+        <route>
+            <name>addbooks/delete/({any})</name>
+            <value>Daybooks/Daybook/AddBooks/delete/$1</value>
+        </route>
+    </dev>
+    <!-- Test Environment -->
+    <test>
+    </test>
+    <!-- Production Environment -->
+    <prod>
+    </prod>
 </config>

@@ -22,10 +22,10 @@
  */
 if ( !defined( '_RUDWEB' ) )
 {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -40,61 +40,61 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Controller_Daybooks_Daybook extends ControllerApp
 {
-	public function AddBooks()
-	{
+    public function AddBooks()
+    {
 
-		$this->Module()->HandleBooksDelete( $this->_mRequest );
+        $this->Module()->HandleBooksDelete( $this->_mRequest );
 
-		/**
-		 * @var string
-		 */
-		$data['title'] = 'Daybooks - Manage';
+        /**
+         * @var string
+         */
+        $data['title'] = 'Daybooks - Manage';
 
-		/**
-		 * @var string
-		 */
-		$data['page'] = 'addbooks';
+        /**
+         * @var string
+         */
+        $data['page'] = 'addbooks';
 
-		/**
-		 * @var array
-		 */
-		$data['form'] = $this->Module()->HandleBooksAdd();
+        /**
+         * @var array
+         */
+        $data['form'] = $this->Module()->HandleBooksAdd();
 
-		/**
-		 * @var array
-		 */
-		$data['books'] = $this->Module()->GetBooks();
+        /**
+         * @var array
+         */
+        $data['books'] = $this->Module()->GetBooks();
 
-		/**
-		 * @var int
-		 */
-		$data['next_book'] = Core::Database()->GetNext( 'book_number', 'fin_daybooks' );
+        /**
+         * @var int
+         */
+        $data['next_book'] = Core::Database()->GetNext( 'book_number', 'fin_daybooks' );
 
-		echo $this->GetOutput( $data );
+        echo $this->GetOutput( $data );
 
-		return TRUE;
-	}
+        return TRUE;
+    }
 
-	public function ListBooks()
-	{
-		/**
-		 * @var string
-		 */
-		$data['title'] = 'Daybooks';
+    public function ListBooks()
+    {
+        /**
+         * @var string
+         */
+        $data['title'] = 'Daybooks';
 
-		/**
-		 * @var string
-		 */
-		$data['page'] = 'daybooks';
+        /**
+         * @var string
+         */
+        $data['page'] = 'daybooks';
 
-		/**
-		 * @var array
-		 */
-		$data['books'] = $this->Module()->GetBooks();
+        /**
+         * @var array
+         */
+        $data['books'] = $this->Module()->GetBooks();
 
-		echo $this->GetOutput( $data );
+        echo $this->GetOutput( $data );
 
-		return TRUE;
-	}
+        return TRUE;
+    }
 }
 ?>

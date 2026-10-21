@@ -20,10 +20,10 @@
  */
 if ( !defined( '_RUDWEB' ) )
 {
-	/**
-	 * Stop script execution.
-	 */
-	exit();
+    /**
+     * Stop script execution.
+     */
+    exit();
 }
 
 /**
@@ -38,108 +38,108 @@ if ( !defined( '_RUDWEB' ) )
  */
 class Module_Daybooks extends ModuleApp
 {
-	public function GetBooks()
-	{
-		/**
-		 * @var array
-		 */
-		$db_data = array( 'bin.book_id', 'book_number', 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
+    public function GetBooks()
+    {
+        /**
+         * @var array
+         */
+        $db_data = array( 'bin.book_id', 'book_number', 'book_date', 'book_account', 'book_type', 'book_amount', 'book_document', 'book_notes',);
 
-		/**
-		 * @var array
-		 */
-		$db_table = 'fin_object_daybook';
+        /**
+         * @var array
+         */
+        $db_table = 'fin_object_daybook';
 
-		/**
-		 * @var array
-		 */
-		$db_options = NULL;
+        /**
+         * @var array
+         */
+        $db_options = NULL;
 
-		return Core::Database()->Retrieve( $db_data, $db_table, $db_options );
-	}
+        return Core::Database()->Retrieve( $db_data, $db_table, $db_options );
+    }
 
-	public function HandleBooksDelete( $request )
-	{
-		if ( !empty( $request['query']['delete'] ) )
-		{
-			/**
-			 * @var array
-			 */
-			$db_options['conditions'] = array( 'bin.book_id', $request['query']['delete'] );
+    public function HandleBooksDelete( $request )
+    {
+        if ( !empty( $request['query']['delete'] ) )
+        {
+            /**
+             * @var array
+             */
+            $db_options['conditions'] = array( 'bin.book_id', $request['query']['delete'] );
 
-			/**
-			 * @var array
-			 */
-			$db_options['limit'] = 1;
+            /**
+             * @var array
+             */
+            $db_options['limit'] = 1;
 
-			Core::Database()->Delete( 'fin_daybooks', $db_options );
+            Core::Database()->Delete( 'fin_daybooks', $db_options );
 
-			Core::Router()->Redirect( 'addbooks' );
+            Core::Router()->Redirect( 'addbooks' );
 
-			return TRUE;
-		}
+            return TRUE;
+        }
 
-		return FALSE;
-	}
+        return FALSE;
+    }
 
-	public function HandleBooksAdd()
-	{
-		Core::Form()->SetMethod( 'post' );
+    public function HandleBooksAdd()
+    {
+        Core::Form()->SetMethod( 'post' );
 
-		Core::Form()->SetData( Core::Config()->Get( 'daybooks.form.daybook_add' ) );
+        Core::Form()->SetData( Core::Config()->Get( 'daybooks.form.daybook_add' ) );
 
-		/**
-		 * @var array
-		 */
-		$form['meta'] = Core::Form()->GetMeta();
+        /**
+         * @var array
+         */
+        $form['meta'] = Core::Form()->GetMeta();
 
-		/**
-		 * @var array
-		 */
-		$form['errors'] = array();
+        /**
+         * @var array
+         */
+        $form['errors'] = array();
 
-		if ( !empty( $_POST ) )
-		{
-			/**
-			 * @var bool
-			 */
-			$validation = Core::Form()->Validate();
+        if ( !empty( $_POST ) )
+        {
+            /**
+             * @var bool
+             */
+            $validation = Core::Form()->Validate();
 
-			if ( FALSE !== $validation )
-			{
-				/**
-				 * @var array
-				 */
-				$form['data'] = Core::Form()->GetFilteredData();
+            if ( FALSE !== $validation )
+            {
+                /**
+                 * @var array
+                 */
+                $form['data'] = Core::Form()->GetFilteredData();
 
-				unset($form['data']['book_add']);
+                unset($form['data']['book_add']);
 
-				Core::Database()->Create( $form['data'], 'fin_daybooks' );
+                Core::Database()->Create( $form['data'], 'fin_daybooks' );
 
-				Core::Router()->Redirect();
-			}
-			else
-			{
-				/**
-				 * @var array
-				 */
-				$form['data'] = Core::Form()->GetData();
+                Core::Router()->Redirect();
+            }
+            else
+            {
+                /**
+                 * @var array
+                 */
+                $form['data'] = Core::Form()->GetData();
 
-				/**
-				 * @var array
-				 */
-				$form['errors'] = Core::Form()->GetErrors();
-			}
-		}
-		else
-		{
-			/**
-			 * @var array
-			 */
-			$form['data'] = Core::Form()->GetData();
-		}
+                /**
+                 * @var array
+                 */
+                $form['errors'] = Core::Form()->GetErrors();
+            }
+        }
+        else
+        {
+            /**
+             * @var array
+             */
+            $form['data'] = Core::Form()->GetData();
+        }
 
-		return $form;
-	}
+        return $form;
+    }
 }
 ?>
