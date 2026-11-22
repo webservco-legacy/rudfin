@@ -27,6 +27,7 @@ Left out of the whole history: the key and certificate of the development sandbo
 
 From my Subversion repository (r1 to r24), turned into git in 2026 (23 commits), the dates kept. The last
 commit before this README sets LF line endings and indents with spaces (not in the third-party code).
+The earlier commits have LF line endings too: 5 files had CRLF line endings in the originals.
 
 ## Third-party code
 
